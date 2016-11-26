@@ -21,13 +21,13 @@ switch ($_POST["comand"])
     {
         if(isset($_POST['id']))
         {
-          $query = "SELECT * FROM clients WHERE id = '$_POST[id])'";
+          $query = "SELECT * FROM clients WHERE id = '$_POST[id]'";
           $result = pg_query($query) or die(pg_last_error());
           if(pg_num_rows($result) == 0)
           {
-            $query = "INSERT INTO clients (id, response, request) VALUES ('$_POST[id]', '', '')";
+            	$query = "INSERT INTO clients (id, response, request) VALUES ('$_POST[id]', '', '')";
+		$result = pg_query($query) or die(pg_last_error());
           }
-          $result = pg_query($query) or die(pg_last_error());
           echo "true";
         }
     } break;
