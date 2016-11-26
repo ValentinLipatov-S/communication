@@ -1,4 +1,5 @@
 <?php
+echo '1';
 $dbconn = pg_connect("
 	host     = ec2-54-235-89-113.compute-1.amazonaws.com
 	dbname   = d4vrdl5cj9rncb
