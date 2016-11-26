@@ -5,15 +5,18 @@ $dbconn = pg_connect("
 	user     = malouijarvdhsq
 	password = tXOJrWYUOh-BTc-nQ5KxRa1V_N
 ")or die('Could not connect: ' . pg_last_error());
-
-$query = "CREATE TABLE clients (
-	id        TEXT    NOT NULL,
-	response  TEXT    NOT NULL,
-	request   TEXT    NOT NULL)";
-$result = pg_query($query) or die(pg_last_error());
 			
 switch ($_POST["comand"])
 {
+   case "create_database":
+   {
+	$query = "CREATE TABLE clients (
+	id        TEXT    NOT NULL,
+	response  TEXT    NOT NULL,
+	request   TEXT    NOT NULL)";
+	$result = pg_query($query) or die(pg_last_error());
+    } break;
+		
     case "set_bot": 
     {
         if(isset($_POST['id']))
