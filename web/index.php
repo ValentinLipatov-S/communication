@@ -48,7 +48,7 @@ switch ($_POST["comand"])
     {
         if(isset($_POST['request']) and isset($_POST['id']))
         {
-          $query = "UPDATE clients SET request = '$_POST[request]' WHERE id = '$_POST[id])'";
+          $query = "UPDATE clients SET request = '$_POST[request]' WHERE id = '$_POST[id]'";
           $result = pg_query($query) or die(pg_last_error());
         }
     } break;
@@ -70,7 +70,7 @@ switch ($_POST["comand"])
     {
         if(isset($_POST['response']) and isset($_POST['id']))
         {
-          $query = "UPDATE clients SET response = '$_POST[response]' WHERE id = '$_POST[id])'";
+          $query = "UPDATE clients SET response = '$_POST[response]' WHERE id = '$_POST[id]'";
           $result = pg_query($query) or die(pg_last_error());
         }
     } break;
